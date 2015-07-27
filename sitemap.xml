@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
+  
+  <url>
+    <loc>http://www.phding.com/source/digest-and-random-words/</loc>
+    
+    <lastmod>2015-05-23T04:33:42+01:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.phding.com/source/bump/</loc>
+    
+    <lastmod>2015-04-11T05:40:30+01:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.phding.com/source/the-snow-of-baltimore/</loc>
+    
+    <lastmod>2015-03-07T06:55:30+00:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.phding.com/source/random-words/</loc>
+    
+    <lastmod>2014-12-07T05:18:46+00:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.phding.com/source/hello-mathjax/</loc>
+    
+    <lastmod>2014-11-28T03:12:30+00:00</lastmod>
+    
+    <priority>0.8</priority>
+  </url>
+  
+  
+  <url>
+    <loc>http://www.phding.com/misc/</loc>
+    <lastmod>2015-07-26T16:52:59+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.phding.com/about/</loc>
+    <lastmod>2015-07-26T16:52:59+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.phding.com/</loc>
+    <lastmod>2015-07-26T16:52:59+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.phding.com/posts/</loc>
+    <lastmod>2015-07-26T16:52:59+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.phding.com/theme-setup/</loc>
+    <lastmod>2015-07-26T16:52:59+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.phding.com/academia/</loc>
+    <lastmod>2015-07-26T16:52:59+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.phding.com/geeking/</loc>
+    <lastmod>2015-07-26T16:52:59+01:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  
+  
+</urlset>
