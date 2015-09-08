@@ -1,0 +1,333 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Setup YouCompleteMe For C++ Programming &#8211; PHDING</title>
+<meta name="description" content="Be happy and use Vim">
+<meta name="keywords" content="Geeking, Vim, C++">
+
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="Setup YouCompleteMe For C++ Programming">
+<meta name="twitter:description" content="Be happy and use Vim">
+
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://phding.com//images/default-thumb.png">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Setup YouCompleteMe For C++ Programming">
+<meta property="og:description" content="Be happy and use Vim">
+<meta property="og:url" content="http://phding.com//setup-youcompleteme-for-c-plus-plus-programming/">
+<meta property="og:site_name" content="PHDING">
+
+
+
+
+
+<link rel="canonical" href="http://phding.com//setup-youcompleteme-for-c-plus-plus-programming/">
+<link href="http://phding.com//feed.xml" type="application/atom+xml" rel="alternate" title="PHDING Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://phding.com//assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+	<script src="http://phding.com//assets/js/vendor/html5shiv.min.js"></script>
+	<script src="http://phding.com//assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="http://phding.com//assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+<link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://phding.com//favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://phding.com//favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://phding.com//images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://phding.com//images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://phding.com//images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://phding.com//images/apple-touch-icon-144x144-precomposed.png">
+<script type="text/javascript"
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+</head>
+
+<body class="post">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="http://phding.com//">PHDING</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation" id="site-nav" class="nav">
+		    <ul>
+		        
+				    
+				        
+				    
+				    <li><a href="http://phding.com//about" >About</a></li>
+				
+				    
+				        
+				    
+				    <li><a href="http://phding.com//posts" >All Posts</a></li>
+				
+				    
+				        
+				    
+				    <li><a href="http://phding.com//academia" >Academia</a></li>
+				
+				    
+				        
+				    
+				    <li><a href="http://phding.com//geeking" >Geeking</a></li>
+				
+				    
+				        
+				    
+				    <li><a href="http://phding.com//misc" >Misc</a></li>
+				
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    
+
+
+<div itemscope itemtype="http://schema.org/Person">
+
+
+	<img src="http://phding.com//images/bio-photo.jpg" class="bio-photo" alt="Chombear bio photo">
+
+
+  <h3 itemprop="name">Chombear</h3>
+  <p>"passionate and serene, profound and simple, affectionate and proud, subtle and straightforward"</p>
+  <a href="mailto:shuoyangd@gmail.com" class="author-social" target="_blank"><i class="fa fa-fw fa-envelope-square"></i> Email</a>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <a href="http://www.flickr.com/shuoyangd" class="author-social" target="_blank"><i class="fa fa-fw fa-flickr"></i> Flickr</a>
+</div>
+  </div>
+  <article class="post">
+    <div class="headline-wrap">
+      
+        <h1><a href="http://phding.com//setup-youcompleteme-for-c-plus-plus-programming/" rel="bookmark" title="Setup YouCompleteMe For C++ Programming">Setup YouCompleteMe For C++ Programming</a></h1>
+      
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap">
+      <p>To start with, visit the <a href="https://github.com/Valloric/YouCompleteMe">Github page</a> and read through the section with the (sarcastic) title “Mac OS X super-quick installation”. Particularly pay attention to the part that has something to do with C Family language, as I quote:</p>
+
+<blockquote>
+  <p>If you want C-family completion, you MUST have the latest Xcode installed along with the latest Command Line Tools (they are installed when you start Xcode for the first time).</p>
+
+  <p>Install CMake. Preferably with <a href="http://mxcl.github.com/homebrew/">Homebrew</a>, but here’s the <a href="http://www.cmake.org/download/">stand-alone CMake installer</a>.</p>
+</blockquote>
+
+<p>Another thing to check for is whether you are running a Vim version higher than 7.3.584. To check for your version, just run <code>vi --version | head -1</code> or start Vim without specifying a file to open. The YouCompleteMe document requires you to use MacVim but from my own experience a Vim with python2.x support will also work. To check whether you have python2.x support, run <code>vi --version | grep '+python'</code>. If the output is not null, you’re good to go.</p>
+
+<p>Having finished all these preparations, type the following command to compile YCM:</p>
+
+<pre><code>cd ~/.vim/bundle/YouCompleteMe
+./install.sh --clang-completer
+</code></pre>
+
+<p>OK. Now you have installed YCM, but this is not the end of the story. Because to actually make YCM to work for your C++ program, you’ll have to write a <code>.ycm_extra_conf.py</code> file in your project directory, to point your plugin to all the libraries you would like to use in your program. Fortunately you don’t really have to write it, at least most of the time – you can have it generated automatically, using <a href="https://github.com/rdnetto/YCM-Generator">YCM-Generator</a>. Don’t attempt to use Vundle to install it, just <code>git clone</code> to somewhere and you are done.</p>
+
+<p>What this generator does is reading the makefile in your project directory and translate the setup of your build into the setup of your auto-completion plugin. Now here is the problem: how would your plugin know where is your C++ standard library? Well the fact is your plugin won’t automatically know, and your YCM-Generator won’t either – you have to tell them.</p>
+
+<p>So you’ll have to know where does the C++ library locate in your machine. Type <code>`gcc -print-prog-name=cpp` -v</code> into your terminal, you should be able to get something like this:</p>
+
+<pre><code>Apple LLVM version 6.1.0 (clang-602.0.53) (based on LLVM 3.6.0svn)
+Target: x86_64-apple-darwin14.4.0
+Thread model: posix
+ "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang" -cc1 -triple x86_64-apple-macosx10.10.0 -E -disable-free -disable-llvm-verifier -main-file-name - -mrelocation-model pic -pic-level 2 -mdisable-fp-elim -masm-verbose -munwind-tables -target-cpu core2 -target-linker-version 242.2 -v -dwarf-column-info -resource-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0 -I /usr/include -fdebug-compilation-dir /Users/shuoyang/Workspace/cs161/hw4 -ferror-limit 19 -fmessage-length 158 -stack-protector 1 -mstackrealign -fblocks -fobjc-runtime=macosx-10.10.0 -fencode-extended-block-signature -fmax-type-align=16 -fdiagnostics-show-option -fcolor-diagnostics -traditional-cpp -o - -x c -
+clang -cc1 version 6.1.0 based upon LLVM 3.6.0svn default target x86_64-apple-darwin14.4.0
+ignoring duplicate directory "/usr/include"
+  as it is a non-system directory that duplicates a system directory
+#include "..." search starts here:
+#include &lt;...&gt; search starts here:
+ /usr/local/include
+ /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include
+ /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include
+ /usr/include
+ /System/Library/Frameworks (framework directory)
+ /Library/Frameworks (framework directory)
+End of search list.
+</code></pre>
+
+<p>What you should be care about is the following part:</p>
+
+<pre><code>#include "..." search starts here:
+#include &lt;...&gt; search starts here:
+ /usr/local/include
+ /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include
+ /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include
+ /usr/include
+ /System/Library/Frameworks (framework directory)
+ /Library/Frameworks (framework directory)
+</code></pre>
+
+<p>These are the places where your C++ compiler would search for when they build your C++ programs, so naturally, you should tell your auto-completion program to search the same place as well. To do this, go to your YCM-Generator directory and find <code>template.py</code>. As the name suggests, this is the “template” your generator use to generate your auto-completion comfiguration file. Find the <code>flags</code> variable (which is a python list) at the beginning of the source file, add your include directories like this:</p>
+
+<div class="highlight"><pre><code class="language-python" data-lang="python"><a name="True-1"></a><span class="n">flags</span> <span class="o">=</span> <span class="p">[</span>
+<a name="True-2"></a>	<span class="s">&#39;-isystem&#39;</span><span class="p">,</span>
+<a name="True-3"></a>	<span class="s">&#39;/path/to/your/first/system/directory&#39;</span><span class="p">,</span>
+<a name="True-4"></a>	<span class="s">&#39;-isystem&#39;</span><span class="p">,</span>
+<a name="True-5"></a>	<span class="s">&#39;/path/to/your/second/system/directory&#39;</span><span class="p">,</span>
+<a name="True-6"></a>	<span class="o">...</span>
+<a name="True-7"></a>	<span class="s">&#39;-I&#39;</span><span class="p">,</span>
+<a name="True-8"></a>	<span class="s">&#39;/path/to/your/first/local/include/directory&#39;</span><span class="p">,</span>
+<a name="True-9"></a>	<span class="o">...</span>
+<a name="True-10"></a><span class="p">]</span></code></pre></div>
+
+<p>In short, the <code>-isystem</code> tag precedes all the system library paths, while <code>-I</code> precedes all the local include directories. Keep in mind that this is a template so you shouldn’t add any project-specific paths in there. Personally, I only add <code>.</code> to the local include directories in <code>template.py</code>.</p>
+
+<p>When you generate configuration files for your project with YCM-Generator, you should run:</p>
+
+<pre><code class="language-bash">/path/to/YCM-Generator/config_gen.py /path/to/project
+</code></pre>
+
+<p>That’s not too hard, isn’t it? Regretfully, when I write this post, YCMGenerator only supports four build systems: <code>make</code> <code>cmake</code> <code>qmake</code> and <code>autotools</code>. Now what should we do if we are using building systems other than these four? Well, apparently we’ll have to do some hacking by ourselves, but from my own experience with <em>bjam</em> (the boost building system), once you get the system and local include path correct, YCM is mostly able to work.</p>
+
+<p>This concludes our configuration for YCM.</p>
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="social-share">
+  <h4>Share on</h4>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=http://phding.com//setup-youcompleteme-for-c-plus-plus-programming/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=http://phding.com//setup-youcompleteme-for-c-plus-plus-programming/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=http://phding.com//setup-youcompleteme-for-c-plus-plus-programming/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+  </ul>
+</div><!-- /.social-share -->
+        <p class="byline"><strong>Setup YouCompleteMe For C++ Programming</strong> was published on <time datetime="2015-09-07T22:37:32-04:00">September 07, 2015</time>.</p>
+      </footer>
+    </div><!-- /.article-wrap -->
+  
+    <section id="disqus_thread"></section><!-- /#disqus_thread -->
+  
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="http://phding.com//posts/">View all posts</a>)</small></h4>
+    <ul>
+    
+      <li><a href="http://phding.com//setup-for-c-plus-plus-programming-under-os-x-command-line/" title="Setup For C++ Programming Under OS X Command Line">Setup For C++ Programming Under OS X Command Line</a></li>
+    
+      <li><a href="http://phding.com//digest-and-random-words/" title="摘抄与随笔">摘抄与随笔</a></li>
+    
+      <li><a href="http://phding.com//bump/" title="Bump!">Bump!</a></li>
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  <footer>
+    
+
+<span>&copy; 2015 Chombear. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://phding.com//assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://phding.com//assets/js/scripts.min.js"></script>
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl = 
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', '{"provider"=>"google", "google"=>{"tracking_id"=>"UA-55222505-2"}}']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+  
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'phding'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+	        
+
+</body>
+</html>
