@@ -216,9 +216,9 @@ End of search list.
 
 <div class="highlight"><pre><code class="language-python" data-lang="python"><a name="True-1"></a><span class="n">flags</span> <span class="o">=</span> <span class="p">[</span>
 <a name="True-2"></a>	<span class="s">&#39;-isystem&#39;</span><span class="p">,</span>
-<a name="True-3"></a>	<span class="s">&#39;/path/to/your/first/system/directory&#39;</span><span class="p">,</span>
+<a name="True-3"></a>	<span class="s">&#39;/path/to/your/first/system/include/directory&#39;</span><span class="p">,</span>
 <a name="True-4"></a>	<span class="s">&#39;-isystem&#39;</span><span class="p">,</span>
-<a name="True-5"></a>	<span class="s">&#39;/path/to/your/second/system/directory&#39;</span><span class="p">,</span>
+<a name="True-5"></a>	<span class="s">&#39;/path/to/your/second/system/include/directory&#39;</span><span class="p">,</span>
 <a name="True-6"></a>	<span class="o">...</span>
 <a name="True-7"></a>	<span class="s">&#39;-I&#39;</span><span class="p">,</span>
 <a name="True-8"></a>	<span class="s">&#39;/path/to/your/first/local/include/directory&#39;</span><span class="p">,</span>
@@ -234,7 +234,7 @@ End of search list.
 
 <p>That’s not too hard, isn’t it? Regretfully, when I write this post, YCMGenerator only supports four build systems: <code>make</code> <code>cmake</code> <code>qmake</code> and <code>autotools</code>. Now what should we do if we are using building systems other than these four? Well, apparently we’ll have to do some hacking by ourselves, but from my own experience with <em>bjam</em> (the boost building system), once you get the system and local include path correct, YCM is mostly able to work.</p>
 
-<p>This concludes our configuration for YCM.</p>
+<p>This concludes our configuration for YCM. Open a C++ project and start Viming.</p>
 
       <hr />
       <footer role="contentinfo">

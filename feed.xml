@@ -4,7 +4,7 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://phding.com//feed.xml" />
 <link rel="alternate" type="text/html" href="http://phding.com/" />
-<updated>2015-09-07T23:16:28-04:00</updated>
+<updated>2015-09-08T12:50:33-04:00</updated>
 <id>http://phding.com//</id>
 <author>
   <name>Chombear</name>
@@ -83,9 +83,9 @@ End of search list.
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;a name=&quot;True-1&quot;&gt;&lt;/a&gt;&lt;span class=&quot;n&quot;&gt;flags&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
 &lt;a name=&quot;True-2&quot;&gt;&lt;/a&gt;	&lt;span class=&quot;s&quot;&gt;&amp;#39;-isystem&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-&lt;a name=&quot;True-3&quot;&gt;&lt;/a&gt;	&lt;span class=&quot;s&quot;&gt;&amp;#39;/path/to/your/first/system/directory&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;a name=&quot;True-3&quot;&gt;&lt;/a&gt;	&lt;span class=&quot;s&quot;&gt;&amp;#39;/path/to/your/first/system/include/directory&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
 &lt;a name=&quot;True-4&quot;&gt;&lt;/a&gt;	&lt;span class=&quot;s&quot;&gt;&amp;#39;-isystem&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
-&lt;a name=&quot;True-5&quot;&gt;&lt;/a&gt;	&lt;span class=&quot;s&quot;&gt;&amp;#39;/path/to/your/second/system/directory&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+&lt;a name=&quot;True-5&quot;&gt;&lt;/a&gt;	&lt;span class=&quot;s&quot;&gt;&amp;#39;/path/to/your/second/system/include/directory&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
 &lt;a name=&quot;True-6&quot;&gt;&lt;/a&gt;	&lt;span class=&quot;o&quot;&gt;...&lt;/span&gt;
 &lt;a name=&quot;True-7&quot;&gt;&lt;/a&gt;	&lt;span class=&quot;s&quot;&gt;&amp;#39;-I&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
 &lt;a name=&quot;True-8&quot;&gt;&lt;/a&gt;	&lt;span class=&quot;s&quot;&gt;&amp;#39;/path/to/your/first/local/include/directory&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
@@ -101,7 +101,7 @@ End of search list.
 
 &lt;p&gt;That’s not too hard, isn’t it? Regretfully, when I write this post, YCMGenerator only supports four build systems: &lt;code&gt;make&lt;/code&gt; &lt;code&gt;cmake&lt;/code&gt; &lt;code&gt;qmake&lt;/code&gt; and &lt;code&gt;autotools&lt;/code&gt;. Now what should we do if we are using building systems other than these four? Well, apparently we’ll have to do some hacking by ourselves, but from my own experience with &lt;em&gt;bjam&lt;/em&gt; (the boost building system), once you get the system and local include path correct, YCM is mostly able to work.&lt;/p&gt;
 
-&lt;p&gt;This concludes our configuration for YCM.&lt;/p&gt;
+&lt;p&gt;This concludes our configuration for YCM. Open a C++ project and start Viming.&lt;/p&gt;
 
     &lt;p&gt;&lt;a href=&quot;http://phding.com//setup-youcompleteme-for-c-plus-plus-programming/&quot;&gt;Setup YouCompleteMe For C++ Programming&lt;/a&gt; was originally published by Chombear at &lt;a href=&quot;http://phding.com/&quot;&gt;PHDING&lt;/a&gt; on September 07, 2015.&lt;/p&gt;
   </content>
