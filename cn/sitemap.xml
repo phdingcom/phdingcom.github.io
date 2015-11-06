@@ -9,13 +9,10 @@
     <lastmod>2015-03-07T01:55:30-05:00</lastmod>
   </url>
   <url>
-    <loc>http://phding.com/cn/misc/</loc>
-  </url>
-  <url>
     <loc>http://phding.com/cn/about/</loc>
   </url>
   <url>
-    <loc>http://phding.com/cn/</loc>
+    <loc>http://phding.com/cn/misc/</loc>
   </url>
   <url>
     <loc>http://phding.com/cn/posts/</loc>
@@ -24,9 +21,12 @@
     <loc>http://phding.com/cn/theme-setup/</loc>
   </url>
   <url>
-    <loc>http://phding.com/cn/academia/</loc>
+    <loc>http://phding.com/cn/travel/</loc>
   </url>
   <url>
-    <loc>http://phding.com/cn/geeking/</loc>
+    <loc>http://phding.com/cn/</loc>
+  </url>
+  <url>
+    <loc>http://phding.com/cn/music/</loc>
   </url>
 </urlset>
