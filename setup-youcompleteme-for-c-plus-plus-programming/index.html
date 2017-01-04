@@ -247,9 +247,36 @@ End of search list.
 <pre><code class="language-bash">/path/to/YCM-Generator/config_gen.py /path/to/project
 </code></pre>
 
-<p>That’s not too hard, isn’t it? Regretfully, when I write this post, YCMGenerator only supports four build systems: <code>make</code> <code>cmake</code> <code>qmake</code> and <code>autotools</code>. Now what should we do if we are using building systems other than these four? <strike>Well, apparently we'll have to do some hacking by ourselves, but from my own experience with *bjam* (the boost building system), once you get the system and local include path correct, YCM is mostly able to work.</strike> I worked with <em>bjam</em> using this solution for a while and it does not behave as consistently as I wished. Recently after I upgraded XCode it broke down completely, so I decided to fix it.</p>
+<p>That’s not too hard, isn’t it? Regretfully, when I write this post, YCMGenerator only supports four build systems: <code>make</code> <code>cmake</code> <code>qmake</code> and <code>autotools</code>. Now what should we do if we are using building systems other than these four? I used to use some guesswork to fill in the compilation flags, and as you can imagine things do not work as consistently as I hoped. And after two years I finally find a workaround.</p>
 
-<p>The solution I found was surprisingly simple and elegant: copy <a href="https://github.com/gavinbeatty/gavinbeatty/blob/master/configs/common/ycm_extra_conf.py">this</a> config file to the root project folder (with either <code>Jamroot</code>, <code>Jamroot.jam</code> or <code>project-root.jam</code> file) and use this config file from now on (you need to rename it to <code>.ycm_extra_conf.py</code>). The <a href="https://github.com/gavinbeatty/gavinbeatty/blob/master/help/vim-ycm.mkd">original configuration</a> also recommended combining <a href="https://github.com/rizsotto/Bear">Bear</a> with his solution, which I haven’t yet got enough luck to make it work. But so far I’m happy enough because the completion is working normaly again.</p>
+<h5 id="optional-use-bear-to-generate-flags">(Optional) Use <code>Bear</code> To Generate Flags</h5>
+
+<p><strong>Disclaimer</strong>: The <code>.ycm_extra_conf.py</code> config file I provided only works for <code>bjam</code> build system. If you need to make it work on other building systems, you may need to create your own config.</p>
+
+<p><strong>Credit</strong>: I found this solution <a href="https://github.com/gavinbeatty/gavinbeatty/blob/master/help/vim-ycm.mkd">here</a> by Gavin Beatty. I also forked his YCM config file and made some small changes. Thanks.</p>
+
+<p>From my understanding, <a href="https://github.com/rizsotto/Bear">Bear</a> is a program that intercepts all the compilation commands incurred by a system build and formatting them into a <code>compile_commands.json</code> file, “for clang tooling”. I don’t really know why one would want to do that, but all we want is generating clang compilation flags for YCM, and it seems to do its job.</p>
+
+<p>However, for OS X version later than 10.11 (El Capitan), <code>Bear</code> may not be as easy to setup as it is for others because it doesn’t like something called <a href="https://en.wikipedia.org/wiki/System_Integrity_Protection">SIP</a> in OS X. To make it work, you have to turn SIP off first. You can find a lot of tutorials that teach you how to do that. If you don’t want to turn SIP off, you may want to try <a href="https://github.com/rizsotto/scan-build">scan-build</a>, which contains some workaround specifically designed for that. But I’m only going to introduce <code>Bear</code>.</p>
+
+<p>Setting up bear on OS X itself is pretty straight-forward – there is a brew format so you can install it simply by calling:</p>
+
+<pre><code>brew install bear
+</code></pre>
+
+<p>What you’ll do next is generating the json file. Here is how you do it:</p>
+
+<pre><code>bear [build command]
+</code></pre>
+
+<p>For example, my command is:</p>
+
+<pre><code>bear ./bjam --with-boost=~/Workspace/moses/opt --with-cmph=~/Workspace/moses/opt --with-mm --with-probing-pt -j4 -a
+</code></pre>
+
+<p>You may see a warning about <code>.dylb</code> and code signing. Just ignore it.</p>
+
+<p>After getting the json file, copy <a href="https://github.com/shuoyangd/trilobites/blob/master/.ycm_extra_conf.py">this</a> YCM config file to your root project directory. It is designed to first go through <code>compile_commands.json</code> and collect flags for the source file you opened. If no flags are found in the json file, the script falls back to scanning your project folders and some guesswork. To make it cleverer, you can (and you should!) make changes in <code>CustomFlags</code> function to add some paths that you would like to include.</p>
 
 <h5 id="optional-vimrc-setup">(Optional) <code>.vimrc</code> Setup</h5>
 
