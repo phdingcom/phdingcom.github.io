@@ -180,11 +180,11 @@
 
 <p>Having finished all these checks, it’s time to start install YCM. Basically YCM has two parts: the Vim plugin that interacts with Vim, and the clang backend that generates completion by compiling the source file. Hence, the installation will also proceed in two parts.</p>
 
-<h5 id="vim-plugin">Vim Plugin</h5>
+<h4 id="vim-plugin">Vim Plugin</h4>
 
 <p>Install  with <a href="https://github.com/VundleVim/Vundle.vim">Vundle</a>. If you don’t use vundle, it’s worth to take some time to get familiar with it.</p>
 
-<h5 id="clang-backend">Clang Backend</h5>
+<h4 id="clang-backend">Clang Backend</h4>
 
 <p>I just charged ahead and used the simple installation script, which is just typing the following command to compile YCM:</p>
 
@@ -202,7 +202,7 @@
 
 <h3 id="configuration">Configuration</h3>
 
-<h5 id="ycmextraconfpy-file"><code>.ycm_extra_conf.py</code> file</h5>
+<h4 id="ycmextraconfpy-file"><code>.ycm_extra_conf.py</code> file</h4>
 
 <p>OK. Now you have installed YCM, but this is not the end of the story. Because specially for YCM to work with C++ program, you’ll have to write a <code>.ycm_extra_conf.py</code> file in your project directory, to provide your plugin with all the headers and flags needed to compile the source. Fortunately you don’t really have to write it, at least most of the time – you can have it generated automatically, using <a href="https://github.com/rdnetto/YCM-Generator">YCM-Generator</a>. Don’t attempt to use Vundle to install it, just <code>git clone</code> to somewhere and you are done.</p>
 
@@ -249,7 +249,7 @@ End of search list.
 
 <p>That’s not too hard, isn’t it? Regretfully, when I write this post, YCMGenerator only supports four build systems: <code>make</code> <code>cmake</code> <code>qmake</code> and <code>autotools</code>. Now what should we do if we are using building systems other than these four? I used to use some guesswork to fill in the compilation flags, and as you can imagine things do not work as consistently as I hoped. And after two years I finally find a workaround.</p>
 
-<h5 id="optional-use-bear-to-generate-flags">(Optional) Use <code>Bear</code> To Generate Flags</h5>
+<h4 id="optional-use-bear-to-generate-flags">(Optional) Use <code>Bear</code> To Generate Flags</h4>
 
 <p><strong>Disclaimer</strong>: The <code>.ycm_extra_conf.py</code> config file I provided only works for <code>bjam</code> build system. If you need to make it work on other building systems, you may need to create your own config.</p>
 
@@ -276,9 +276,11 @@ End of search list.
 
 <p>You may see a warning about <code>.dylb</code> and code signing. Just ignore it.</p>
 
-<p>After getting the json file, copy <a href="https://github.com/shuoyangd/trilobites/blob/master/.ycm_extra_conf.py">this</a> YCM config file to your root project directory. It is designed to first go through <code>compile_commands.json</code> and collect flags for the source file you opened. If no flags are found in the json file, the script falls back to scanning your project folders and some guesswork. To make it cleverer, you can (and you should!) make changes in <code>CustomFlags</code> function to add some paths that you would like to include.</p>
+<p>The last step is to copy <a href="https://github.com/shuoyangd/trilobites/blob/master/.ycm_extra_conf.py">this</a> YCM config file to your project root directory. It is designed to first go through <code>compile_commands.json</code> and collect flags for the source file you opened. If no flags are found in the json file, the script falls back to scanning your project folders and some guesswork. To make it cleverer, you can (and you should!) make changes in <code>CustomFlags</code> function to add some paths that you would like to include.</p>
 
-<h5 id="optional-vimrc-setup">(Optional) <code>.vimrc</code> Setup</h5>
+<p>One last note: <code>Bear</code> does not assume build system, and it should also be pretty easy to change <code>.ycm_extra_conf.py</code> to accommodate your build system. So this solution should work for all the C++ build systems. Of course, I still recommend using <code>YCM-Generator</code> if possible such that you don’t have to tamper with your OS X security system.</p>
+
+<h4 id="optional-vimrc-setup">(Optional) <code>.vimrc</code> Setup</h4>
 
 <p>YCM provides lots of hidden features in its configurations, which is simply too long for me to go through. So far I just picked some handy ones to add to my <code>.vimrc</code> file. If you know any other settings that are not included here, please let me know.</p>
 
