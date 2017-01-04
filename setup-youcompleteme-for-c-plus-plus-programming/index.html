@@ -5,14 +5,14 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>Setup YouCompleteMe For C++ Programming &#8211; PHDING</title>
+<title>(Updated 17/01/04) Setup YouCompleteMe For C++ Programming &#8211; PHDING</title>
 <meta name="description" content="Be happy and use Vim">
 <meta name="keywords" content="Geeking, Vim, C++">
 
 
 
 <!-- Twitter Cards -->
-<meta name="twitter:title" content="Setup YouCompleteMe For C++ Programming">
+<meta name="twitter:title" content="(Updated 17/01/04) Setup YouCompleteMe For C++ Programming">
 <meta name="twitter:description" content="Be happy and use Vim">
 
 
@@ -23,7 +23,7 @@
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Setup YouCompleteMe For C++ Programming">
+<meta property="og:title" content="(Updated 17/01/04) Setup YouCompleteMe For C++ Programming">
 <meta property="og:description" content="Be happy and use Vim">
 <meta property="og:url" content="http://phding.com/setup-youcompleteme-for-c-plus-plus-programming/">
 <meta property="og:site_name" content="PHDING">
@@ -157,43 +157,69 @@
   <article class="post">
     <div class="headline-wrap">
       
-        <h1><a href="http://phding.com/setup-youcompleteme-for-c-plus-plus-programming/" rel="bookmark" title="Setup YouCompleteMe For C++ Programming">Setup YouCompleteMe For C++ Programming</a></h1>
+        <h1><a href="http://phding.com/setup-youcompleteme-for-c-plus-plus-programming/" rel="bookmark" title="(Updated 17/01/04) Setup YouCompleteMe For C++ Programming">(Updated 17/01/04) Setup YouCompleteMe For C++ Programming</a></h1>
       
     </div><!--/ .headline-wrap -->
     <div class="article-wrap">
-      <p>To start with, visit the <a href="https://github.com/Valloric/YouCompleteMe">Github page</a> and read through the section with the (sarcastic) title “Mac OS X super-quick installation”. Particularly pay attention to the part that has something to do with C Family language, as I quote:</p>
+      <p>This is a updated version of the original post after I fixed my YouCompleteMe (or YCM) installation broke-down on Jan 3rd, 2017. Better configuration solution for <code>bjam</code> build system is appended at the end.</p>
+
+<h3 id="preparation">Preparation</h3>
+
+<p>To start with, visit the <a href="https://github.com/Valloric/YouCompleteMe">Github page</a> and read through the section with the title “Mac OS X super-quick installation”. Particularly pay attention to the part that has something to do with C Family language, as I quote:</p>
 
 <blockquote>
-  <p>If you want C-family completion, you MUST have the latest Xcode installed along with the latest Command Line Tools (they are installed when you start Xcode for the first time).</p>
-
-  <p>Install CMake. Preferably with <a href="http://mxcl.github.com/homebrew/">Homebrew</a>, but here’s the <a href="http://www.cmake.org/download/">stand-alone CMake installer</a>.</p>
+  <ul>
+    <li>If you want C-family completion, you MUST have the latest Xcode installed along with the latest Command Line Tools (they are installed when you start Xcode for the first time).</li>
+    <li>Install CMake. Preferably with <a href="http://mxcl.github.com/homebrew/">Homebrew</a>, but here’s the <a href="http://www.cmake.org/download/">stand-alone CMake installer</a>.</li>
+  </ul>
 </blockquote>
 
-<p>Another thing to check for is whether you are running a Vim version higher than 7.3.584. To check for your version, just run <code>vi --version | head -1</code> or start Vim without specifying a file to open. The YouCompleteMe document requires you to use MacVim but from my own experience a Vim with python2.x support will also work. To check whether you have python2.x support, run <code>vi --version | grep '+python'</code>. If the output is not null, you’re good to go.</p>
+<p>Apart from these, another thing to check for is your Vim version. First, YouCompleteMe will only work with Vim version higher than 7.3.584. To check for your version, just run <code>vi --version | head -1</code> or start Vim without specifying a file to open. Also, your Vim should have python2.x support. To check whether you have python2.x support, run <code>vi --version | grep '+python'</code>. If the output is not null, you’re good to go. The YouCompleteMe document requires you to use MacVim, but from my experience that does not matter much as long as the previous two requirements are met.</p>
 
-<p>Having finished all these preparations, type the following command to compile YCM:</p>
+<h3 id="installation">Installation</h3>
+
+<p>Having finished all these checks, it’s time to start install YCM. Basically YCM has two parts: the Vim plugin that interacts with Vim, and the clang backend that generates completion by compiling the source file. Hence, the installation will also proceed in two parts.</p>
+
+<h5 id="vim-plugin">Vim Plugin</h5>
+
+<p>Install  with <a href="https://github.com/VundleVim/Vundle.vim">Vundle</a>. If you don’t use vundle, it’s worth to take some time to get familiar with it.</p>
+
+<h5 id="clang-backend">Clang Backend</h5>
+
+<p>I just charge ahead and used the simple installation script, which is just typing the following command to compile YCM:</p>
 
 <pre><code>cd ~/.vim/bundle/YouCompleteMe
 ./install.sh --clang-completer
 </code></pre>
 
-<p>OK. Now you have installed YCM, but this is not the end of the story. Because to actually make YCM to work for your C++ program, you’ll have to write a <code>.ycm_extra_conf.py</code> file in your project directory, to point your plugin to all the libraries you would like to use in your program. Fortunately you don’t really have to write it, at least most of the time – you can have it generated automatically, using <a href="https://github.com/rdnetto/YCM-Generator">YCM-Generator</a>. Don’t attempt to use Vundle to install it, just <code>git clone</code> to somewhere and you are done.</p>
+<p>The maintainer confused me somewhat by saying:</p>
 
-<p>What this generator does is reading the makefile in your project directory and translate the setup of your build into the setup of your auto-completion plugin. Now here is the problem: how would your plugin know where is your C++ standard library? Well the fact is your plugin won’t automatically know, and your YCM-Generator won’t either – you have to tell them.</p>
+<blockquote>
+  <p>Please refer to the full Installation Guide below; the following commands are provided on a best-effort basis and may not work for you.</p>
+</blockquote>
 
-<p>So you’ll have to know where does the C++ library locate in your machine. Type <code>`gcc -print-prog-name=cpp` -v</code> into your terminal, you should be able to get something like this:</p>
+<p>which meant everyone should go through the procedure in the full Installation Guide, and yet he kept the quick installation guide for each OS :/  Persoanlly I tried both full and quick installation on my Mac OS X, and I don’t see any difference. But YMMV.</p>
 
-<pre><code>Apple LLVM version 6.1.0 (clang-602.0.53) (based on LLVM 3.6.0svn)
-Target: x86_64-apple-darwin14.4.0
-Thread model: posix
- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang" -cc1 -triple x86_64-apple-macosx10.10.0 -E -disable-free -disable-llvm-verifier -main-file-name - -mrelocation-model pic -pic-level 2 -mdisable-fp-elim -masm-verbose -munwind-tables -target-cpu core2 -target-linker-version 242.2 -v -dwarf-column-info -resource-dir /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0 -I /usr/include -fdebug-compilation-dir /Users/shuoyang/Workspace/cs161/hw4 -ferror-limit 19 -fmessage-length 158 -stack-protector 1 -mstackrealign -fblocks -fobjc-runtime=macosx-10.10.0 -fencode-extended-block-signature -fmax-type-align=16 -fdiagnostics-show-option -fcolor-diagnostics -traditional-cpp -o - -x c -
-clang -cc1 version 6.1.0 based upon LLVM 3.6.0svn default target x86_64-apple-darwin14.4.0
-ignoring duplicate directory "/usr/include"
-  as it is a non-system directory that duplicates a system directory
+<h3 id="configuration">Configuration</h3>
+
+<h3 id="ycmextraconfpy-file"><code>.ycm_extra_conf.py</code> file</h3>
+
+<p>OK. Now you have installed YCM, but this is not the end of the story. Because specially for YCM to work with C++ program, you’ll have to write a <code>.ycm_extra_conf.py</code> file in your project directory, to provide your plugin with all the headers and flags needed to compile the source. Fortunately you don’t really have to write it, at least most of the time – you can have it generated automatically, using <a href="https://github.com/rdnetto/YCM-Generator">YCM-Generator</a>. Don’t attempt to use Vundle to install it, just <code>git clone</code> to somewhere and you are done.</p>
+
+<p>What this generator does is reading the makefile in your project directory and translate the setup of your build into the setup of your auto-completion plugin. But still, there is a template file which you need to fill up, which points to your C++ standard library and so on. Now here is the problem: how would your plugin know where is your C++ standard library? Well the fact is your plugin won’t automatically know, and your YCM-Generator won’t either – you have to tell them.</p>
+
+<p>So you’ll have to know where does the C++ library locate in your machine. Type <code>echo | clang -v -E -x c++ -</code> into your terminal, you should be able to get something like this:</p>
+
+<pre><code>Apple LLVM version 8.0.0 (clang-800.0.42.1)
+Target: x86_64-apple-darwin16.3.0
+
+...
+
 #include "..." search starts here:
 #include &lt;...&gt; search starts here:
+ /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1
  /usr/local/include
- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include
+ /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.0.0/include
  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include
  /usr/include
  /System/Library/Frameworks (framework directory)
@@ -201,19 +227,7 @@ ignoring duplicate directory "/usr/include"
 End of search list.
 </code></pre>
 
-<p>What you should be care about is the following part:</p>
-
-<pre><code>#include "..." search starts here:
-#include &lt;...&gt; search starts here:
- /usr/local/include
- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/6.1.0/include
- /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include
- /usr/include
- /System/Library/Frameworks (framework directory)
- /Library/Frameworks (framework directory)
-</code></pre>
-
-<p>These are the places where your C++ compiler would search for when they build your C++ programs, so naturally, you should tell your auto-completion program to search the same place as well. To do this, go to your YCM-Generator directory and find <code>template.py</code>. As the name suggests, this is the “template” your generator use to generate your auto-completion comfiguration file. Find the <code>flags</code> variable (which is a python list) at the beginning of the source file, add your include directories like this:</p>
+<p>The above directories listed are the places where your C++ compiler would search for when they build your C++ programs, so naturally, you should tell your auto-completion program to search the same place as well. To do this, go to your YCM-Generator directory and find <code>template.py</code>. As the name suggests, this is the “template” your generator use to generate your auto-completion comfiguration file. Find the <code>flags</code> variable (which is a python list) at the beginning of the source file, add your include directories like this:</p>
 
 <div class="highlight"><pre><code class="language-python" data-lang="python"><a name="True-1"></a><span class="n">flags</span> <span class="o">=</span> <span class="p">[</span>
 <a name="True-2"></a>	<span class="s">&#39;-isystem&#39;</span><span class="p">,</span>
@@ -233,9 +247,29 @@ End of search list.
 <pre><code class="language-bash">/path/to/YCM-Generator/config_gen.py /path/to/project
 </code></pre>
 
-<p>That’s not too hard, isn’t it? Regretfully, when I write this post, YCMGenerator only supports four build systems: <code>make</code> <code>cmake</code> <code>qmake</code> and <code>autotools</code>. Now what should we do if we are using building systems other than these four? Well, apparently we’ll have to do some hacking by ourselves, but from my own experience with <em>bjam</em> (the boost building system), once you get the system and local include path correct, YCM is mostly able to work.</p>
+<p>That’s not too hard, isn’t it? Regretfully, when I write this post, YCMGenerator only supports four build systems: <code>make</code> <code>cmake</code> <code>qmake</code> and <code>autotools</code>. Now what should we do if we are using building systems other than these four? ~~Well, apparently we’ll have to do some hacking by ourselves, but from my own experience with <em>bjam</em> (the boost building system), once you get the system and local include path correct, YCM is mostly able to work.~~  I worked with <em>bjam</em> using this solution for a while and it does not behave as consistently as I wished. Recently after I upgraded XCode it broke down completely, so I decided to fix it. The solution I found was surprisingly simple and elegant: copy <a href="https://github.com/gavinbeatty/gavinbeatty/blob/master/configs/common/ycm_extra_conf.py">this</a> config file to the root project folder (with either <code>Jamroot</code>, <code>Jamroot.jam</code> or <code>project-root.jam</code> file) and use this config file from now on (you need to rename it to <code>.ycm_extra_conf.py</code>). The <a href="https://github.com/gavinbeatty/gavinbeatty/blob/master/help/vim-ycm.mkd">original configuration</a> also recommended combining <a href="https://github.com/rizsotto/Bear">Bear</a> with his solution, which I haven’t yet got enough luck to make it work. But so far I’m happy enough because the completion is working normaly again.</p>
+
+<h4 id="optional-vimrc-setup">(Optional) <code>.vimrc</code> Setup</h4>
+
+<p>YCM provides lots of hidden features in its configurations, which is simply too long for me to go through. So far I just picked some handy ones to add to my <code>.vimrc</code> file. If you know any other settings that are not included here, please let me know.</p>
+
+<div class="highlight"><pre><code class="language-vim" data-lang="vim"><a name="True-1"></a><span class="c">&quot;&quot; turn on completion in comments</span>
+<a name="True-2"></a><span class="k">let</span> <span class="k">g</span>:ycm_complete_in_comments<span class="p">=</span><span class="m">1</span>
+<a name="True-3"></a><span class="c">&quot;&quot; load ycm conf by default</span>
+<a name="True-4"></a><span class="k">let</span> <span class="k">g</span>:ycm_confirm_extra_conf<span class="p">=</span><span class="m">0</span>
+<a name="True-5"></a><span class="c">&quot;&quot; turn on tag completion</span>
+<a name="True-6"></a><span class="k">let</span> <span class="k">g</span>:ycm_collect_identifiers_from_tags_files<span class="p">=</span><span class="m">1</span>
+<a name="True-7"></a><span class="c">&quot;&quot; only show completion as a list instead of a sub-window</span>
+<a name="True-8"></a><span class="k">set</span> <span class="nb">completeopt</span><span class="p">-=</span>preview
+<a name="True-9"></a><span class="c">&quot;&quot; start completion from the first character</span>
+<a name="True-10"></a><span class="k">let</span> <span class="k">g</span>:ycm_min_num_of_chars_for_completion<span class="p">=</span><span class="m">1</span>
+<a name="True-11"></a><span class="c">&quot;&quot; don&#39;t cache completion items</span>
+<a name="True-12"></a><span class="k">let</span> <span class="k">g</span>:ycm_cache_omnifunc<span class="p">=</span><span class="m">0</span>
+<a name="True-13"></a><span class="c">&quot;&quot; complete syntax keywords</span>
+<a name="True-14"></a><span class="k">let</span> <span class="k">g</span>:ycm_seed_identifiers_with_syntax<span class="p">=</span><span class="m">1</span></code></pre></div>
 
 <p>This concludes our configuration for YCM. Open a C++ project and start Viming.</p>
+
 
       <hr />
       <footer role="contentinfo">
@@ -253,7 +287,7 @@ End of search list.
     </li>
   </ul>
 </div><!-- /.social-share -->
-        <p class="byline"><strong>Setup YouCompleteMe For C++ Programming</strong> was published on <time datetime="2015-09-07T22:37:32-04:00">September 07, 2015</time>.</p>
+        <p class="byline"><strong>(Updated 17/01/04) Setup YouCompleteMe For C++ Programming</strong> was published on <time datetime="2017-01-03T23:33:32-05:00">January 03, 2017</time>.</p>
       </footer>
     </div><!-- /.article-wrap -->
   
@@ -279,7 +313,7 @@ End of search list.
   <footer>
     
 
-<span>&copy; 2015 Chombear. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+<span>&copy; 2017 Chombear. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
 
   </footer>
 </div><!-- /.footer-wrap -->
