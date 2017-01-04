@@ -186,7 +186,7 @@
 
 <h5 id="clang-backend">Clang Backend</h5>
 
-<p>I just charge ahead and used the simple installation script, which is just typing the following command to compile YCM:</p>
+<p>I just charged ahead and used the simple installation script, which is just typing the following command to compile YCM:</p>
 
 <pre><code>cd ~/.vim/bundle/YouCompleteMe
 ./install.sh --clang-completer
@@ -198,7 +198,7 @@
   <p>Please refer to the full Installation Guide below; the following commands are provided on a best-effort basis and may not work for you.</p>
 </blockquote>
 
-<p>which meant everyone should go through the procedure in the full Installation Guide, and yet he kept the quick installation guide for each OS :/  Persoanlly I tried both full and quick installation on my Mac OS X, and I don’t see any difference. But YMMV.</p>
+<p>which seem to have meant that everyone should go through the procedure in the full Installation Guide, and yet he kept the quick installation guide for each OS. Persoanlly I tried both full and quick installation on my Mac OS X, and I don’t see any difference. But YMMV.</p>
 
 <h3 id="configuration">Configuration</h3>
 
@@ -251,7 +251,7 @@ End of search list.
 
 <p>The solution I found was surprisingly simple and elegant: copy <a href="https://github.com/gavinbeatty/gavinbeatty/blob/master/configs/common/ycm_extra_conf.py">this</a> config file to the root project folder (with either <code>Jamroot</code>, <code>Jamroot.jam</code> or <code>project-root.jam</code> file) and use this config file from now on (you need to rename it to <code>.ycm_extra_conf.py</code>). The <a href="https://github.com/gavinbeatty/gavinbeatty/blob/master/help/vim-ycm.mkd">original configuration</a> also recommended combining <a href="https://github.com/rizsotto/Bear">Bear</a> with his solution, which I haven’t yet got enough luck to make it work. But so far I’m happy enough because the completion is working normaly again.</p>
 
-<h4 id="optional-vimrc-setup">(Optional) <code>.vimrc</code> Setup</h4>
+<h5 id="optional-vimrc-setup">(Optional) <code>.vimrc</code> Setup</h5>
 
 <p>YCM provides lots of hidden features in its configurations, which is simply too long for me to go through. So far I just picked some handy ones to add to my <code>.vimrc</code> file. If you know any other settings that are not included here, please let me know.</p>
 

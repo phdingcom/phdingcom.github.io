@@ -4,7 +4,7 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://phding.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://phding.com" />
-<updated>2017-01-04T01:33:20-05:00</updated>
+<updated>2017-01-04T01:36:24-05:00</updated>
 <id>http://phding.com/</id>
 <author>
   <name>Chombear</name>
@@ -52,7 +52,7 @@
 
 &lt;h5 id=&quot;clang-backend&quot;&gt;Clang Backend&lt;/h5&gt;
 
-&lt;p&gt;I just charge ahead and used the simple installation script, which is just typing the following command to compile YCM:&lt;/p&gt;
+&lt;p&gt;I just charged ahead and used the simple installation script, which is just typing the following command to compile YCM:&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;cd ~/.vim/bundle/YouCompleteMe
 ./install.sh --clang-completer
@@ -64,7 +64,7 @@
   &lt;p&gt;Please refer to the full Installation Guide below; the following commands are provided on a best-effort basis and may not work for you.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;which meant everyone should go through the procedure in the full Installation Guide, and yet he kept the quick installation guide for each OS :/  Persoanlly I tried both full and quick installation on my Mac OS X, and I don’t see any difference. But YMMV.&lt;/p&gt;
+&lt;p&gt;which seem to have meant that everyone should go through the procedure in the full Installation Guide, and yet he kept the quick installation guide for each OS. Persoanlly I tried both full and quick installation on my Mac OS X, and I don’t see any difference. But YMMV.&lt;/p&gt;
 
 &lt;h3 id=&quot;configuration&quot;&gt;Configuration&lt;/h3&gt;
 
@@ -117,7 +117,7 @@ End of search list.
 
 &lt;p&gt;The solution I found was surprisingly simple and elegant: copy &lt;a href=&quot;https://github.com/gavinbeatty/gavinbeatty/blob/master/configs/common/ycm_extra_conf.py&quot;&gt;this&lt;/a&gt; config file to the root project folder (with either &lt;code&gt;Jamroot&lt;/code&gt;, &lt;code&gt;Jamroot.jam&lt;/code&gt; or &lt;code&gt;project-root.jam&lt;/code&gt; file) and use this config file from now on (you need to rename it to &lt;code&gt;.ycm_extra_conf.py&lt;/code&gt;). The &lt;a href=&quot;https://github.com/gavinbeatty/gavinbeatty/blob/master/help/vim-ycm.mkd&quot;&gt;original configuration&lt;/a&gt; also recommended combining &lt;a href=&quot;https://github.com/rizsotto/Bear&quot;&gt;Bear&lt;/a&gt; with his solution, which I haven’t yet got enough luck to make it work. But so far I’m happy enough because the completion is working normaly again.&lt;/p&gt;
 
-&lt;h4 id=&quot;optional-vimrc-setup&quot;&gt;(Optional) &lt;code&gt;.vimrc&lt;/code&gt; Setup&lt;/h4&gt;
+&lt;h5 id=&quot;optional-vimrc-setup&quot;&gt;(Optional) &lt;code&gt;.vimrc&lt;/code&gt; Setup&lt;/h5&gt;
 
 &lt;p&gt;YCM provides lots of hidden features in its configurations, which is simply too long for me to go through. So far I just picked some handy ones to add to my &lt;code&gt;.vimrc&lt;/code&gt; file. If you know any other settings that are not included here, please let me know.&lt;/p&gt;
 
