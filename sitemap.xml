@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://phding.com/wyman/</loc>
+    <lastmod>2019-10-16T22:00:00-04:00</lastmod>
+  </url>
+  <url>
     <loc>http://phding.com/setup-youcompleteme-for-c-plus-plus-programming/</loc>
     <lastmod>2017-01-03T23:33:32-05:00</lastmod>
   </url>
   <url>
     <loc>http://phding.com/setup-for-c-plus-plus-programming-under-os-x-command-line/</loc>
     <lastmod>2015-09-06T21:23:37-04:00</lastmod>
+  </url>
+  <url>
+    <loc>http://phding.com/digest-and-random-words/</loc>
+    <lastmod>2015-05-22T23:33:42-04:00</lastmod>
   </url>
   <url>
     <loc>http://phding.com/the-snow-of-baltimore/</loc>
@@ -21,24 +29,30 @@
     <lastmod>2014-11-27T22:12:30-05:00</lastmod>
   </url>
   <url>
-    <loc>http://phding.com/academia/</loc>
+    <loc>http://phding.com/cn/</loc>
   </url>
   <url>
     <loc>http://phding.com/geeking/</loc>
   </url>
   <url>
+    <loc>http://phding.com/about/</loc>
+  </url>
+  <url>
     <loc>http://phding.com/</loc>
   </url>
   <url>
-    <loc>http://phding.com/posts/</loc>
+    <loc>http://phding.com/de/</loc>
   </url>
   <url>
-    <loc>http://phding.com/theme-setup/</loc>
+    <loc>http://phding.com/academia/</loc>
   </url>
   <url>
     <loc>http://phding.com/misc/</loc>
   </url>
   <url>
-    <loc>http://phding.com/about/</loc>
+    <loc>http://phding.com/theme-setup/</loc>
+  </url>
+  <url>
+    <loc>http://phding.com/posts/</loc>
   </url>
 </urlset>
