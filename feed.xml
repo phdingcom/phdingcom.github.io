@@ -4,7 +4,7 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://phding.com/feed.xml" />
 <link rel="alternate" type="text/html" href="http://phding.com" />
-<updated>2020-02-27T14:43:16-05:00</updated>
+<updated>2020-03-03T22:26:16-08:00</updated>
 <id>http://phding.com/</id>
 <author>
   <name>sd</name>
@@ -16,11 +16,40 @@
   
 
 <entry>
+  <title type="html"><![CDATA[Fliege nach Seattle]]></title>
+  <link rel="alternate" type="text/html" href="http://phding.com/west-to-seattle/" />
+  <id>http://phding.com/west-to-seattle</id>
+  <published>2020-03-01T16:22:56-08:00</published>
+  <updated>2020-03-01T16:22:56-08:00</updated>
+  <author>
+    <name>sd</name>
+    <uri>http://phding.com</uri>
+    
+  </author>
+  <content type="html">
+    &lt;p&gt;Ich mag immer der Flug vor Baltimore nach Seattle.&lt;br /&gt;
+Der Flug gehe über den Hügeln im Westhängen Maryland und Pennsylvania, dann das unendlich flaches Feld im Illinois, Minnesota, und Montana.&lt;br /&gt;
+Nach etwa vier Stunden, wenn ich bin von der unveränderlich Landschaft gelangweilt, das ist wenn der ferne Cascades am Horizont erschient.&lt;/p&gt;
+
+&lt;p&gt;Zu jener Zeit kenne ich, dass ist es das westliche Ende der Amerika, und gelegt vor mir ist die Hürde, dass der Mensch erst vor zweihundert Jahren überwinden haben.&lt;br /&gt;
+Westlich die Berge gibt es der grüne Wald und der blaue See.&lt;br /&gt;
+Dort befindet sich Seattle.&lt;/p&gt;
+
+&lt;p&gt;Es ist die Zeit, die vergangene Trauer zu vergessen, und neue Wege des unbekannten zu erkundet haben.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;http://phding.com/west-to-seattle/&quot;&gt;Fliege nach Seattle&lt;/a&gt; was originally published by sd at &lt;a href=&quot;http://phding.com&quot;&gt;PHDING&lt;/a&gt; on March 01, 2020.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
   <title type="html"><![CDATA[韦曼秋色]]></title>
   <link rel="alternate" type="text/html" href="http://phding.com/wyman/" />
   <id>http://phding.com/wyman</id>
-  <published>2019-10-16T22:00:00-04:00</published>
-  <updated>2019-10-16T22:00:00-04:00</updated>
+  <published>2019-10-16T19:00:00-07:00</published>
+  <updated>2019-10-16T19:00:00-07:00</updated>
   <author>
     <name>sd</name>
     <uri>http://phding.com</uri>
@@ -68,8 +97,8 @@
   <title type="html"><![CDATA[(Updated 17/01/04) Setup YouCompleteMe For C++ Programming]]></title>
   <link rel="alternate" type="text/html" href="http://phding.com/setup-youcompleteme-for-c-plus-plus-programming/" />
   <id>http://phding.com/setup-youcompleteme-for-c-plus-plus-programming</id>
-  <published>2017-01-03T23:33:32-05:00</published>
-  <updated>2017-01-03T23:33:32-05:00</updated>
+  <published>2017-01-03T20:33:32-08:00</published>
+  <updated>2017-01-03T20:33:32-08:00</updated>
   <author>
     <name>sd</name>
     <uri>http://phding.com</uri>
@@ -228,8 +257,8 @@ End of search list.
   <title type="html"><![CDATA[Setup For C++ Programming Under OS X Command Line]]></title>
   <link rel="alternate" type="text/html" href="http://phding.com/setup-for-c-plus-plus-programming-under-os-x-command-line/" />
   <id>http://phding.com/setup-for-c-plus-plus-programming-under-os-x-command-line</id>
-  <published>2015-09-06T21:23:37-04:00</published>
-  <updated>2015-09-06T21:23:37-04:00</updated>
+  <published>2015-09-06T18:23:37-07:00</published>
+  <updated>2015-09-06T18:23:37-07:00</updated>
   <author>
     <name>sd</name>
     <uri>http://phding.com</uri>
@@ -343,8 +372,8 @@ make install
   <title type="html"><![CDATA[摘抄与随笔]]></title>
   <link rel="alternate" type="text/html" href="http://phding.com/digest-and-random-words/" />
   <id>http://phding.com/digest-and-random-words</id>
-  <published>2015-05-22T23:33:42-04:00</published>
-  <updated>2015-05-22T23:33:42-04:00</updated>
+  <published>2015-05-22T20:33:42-07:00</published>
+  <updated>2015-05-22T20:33:42-07:00</updated>
   <author>
     <name>sd</name>
     <uri>http://phding.com</uri>
@@ -545,8 +574,8 @@ Laugh at the grief that poisons your heart!&lt;/p&gt;
   <title type="html"><![CDATA[巴城的雪]]></title>
   <link rel="alternate" type="text/html" href="http://phding.com/the-snow-of-baltimore/" />
   <id>http://phding.com/the-snow-of-baltimore</id>
-  <published>2015-03-07T01:55:30-05:00</published>
-  <updated>2015-03-07T01:55:30-05:00</updated>
+  <published>2015-03-06T22:55:30-08:00</published>
+  <updated>2015-03-06T22:55:30-08:00</updated>
   <author>
     <name>sd</name>
     <uri>http://phding.com</uri>
@@ -578,7 +607,7 @@ Laugh at the grief that poisons your heart!&lt;/p&gt;
 &lt;p&gt;3月7日凌晨&lt;br /&gt;
 西大学公寓&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;http://phding.com/the-snow-of-baltimore/&quot;&gt;巴城的雪&lt;/a&gt; was originally published by sd at &lt;a href=&quot;http://phding.com&quot;&gt;PHDING&lt;/a&gt; on March 07, 2015.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://phding.com/the-snow-of-baltimore/&quot;&gt;巴城的雪&lt;/a&gt; was originally published by sd at &lt;a href=&quot;http://phding.com&quot;&gt;PHDING&lt;/a&gt; on March 06, 2015.&lt;/p&gt;
   </content>
 </entry>
 
@@ -589,8 +618,8 @@ Laugh at the grief that poisons your heart!&lt;/p&gt;
   <title type="html"><![CDATA[Random Words]]></title>
   <link rel="alternate" type="text/html" href="http://phding.com/random-words/" />
   <id>http://phding.com/random-words</id>
-  <published>2014-12-07T00:18:46-05:00</published>
-  <updated>2014-12-07T00:18:46-05:00</updated>
+  <published>2014-12-06T21:18:46-08:00</published>
+  <updated>2014-12-06T21:18:46-08:00</updated>
   <author>
     <name>sd</name>
     <uri>http://phding.com</uri>
@@ -644,7 +673,7 @@ Because even in the darkest of hours, it still gives us hope.&lt;/p&gt;
 
 &lt;p&gt;And there flows the disturbed opening of “Romeo and Juliet Overture”.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;http://phding.com/random-words/&quot;&gt;Random Words&lt;/a&gt; was originally published by sd at &lt;a href=&quot;http://phding.com&quot;&gt;PHDING&lt;/a&gt; on December 07, 2014.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://phding.com/random-words/&quot;&gt;Random Words&lt;/a&gt; was originally published by sd at &lt;a href=&quot;http://phding.com&quot;&gt;PHDING&lt;/a&gt; on December 06, 2014.&lt;/p&gt;
   </content>
 </entry>
 
@@ -655,8 +684,8 @@ Because even in the darkest of hours, it still gives us hope.&lt;/p&gt;
   <title type="html"><![CDATA[Hello MathJax]]></title>
   <link rel="alternate" type="text/html" href="http://phding.com/hello-mathjax/" />
   <id>http://phding.com/hello-mathjax</id>
-  <published>2014-11-27T22:12:30-05:00</published>
-  <updated>2014-11-27T22:12:30-05:00</updated>
+  <published>2014-11-27T19:12:30-08:00</published>
+  <updated>2014-11-27T19:12:30-08:00</updated>
   <author>
     <name>sd</name>
     <uri>http://phding.com</uri>
