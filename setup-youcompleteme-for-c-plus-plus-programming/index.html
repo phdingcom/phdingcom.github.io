@@ -1,0 +1,314 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>(Updated 17/01/04) Setup YouCompleteMe For C++ Programming &#8211; PHDING</title>
+<meta name="description" content="Be happy and use Vim">
+<meta name="keywords" content="Geeking, Vim, C++">
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="(Updated 17/01/04) Setup YouCompleteMe For C++ Programming">
+<meta name="twitter:description" content="Be happy and use Vim">
+
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://phding.com/images/default-thumb.png">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="(Updated 17/01/04) Setup YouCompleteMe For C++ Programming">
+<meta property="og:description" content="Be happy and use Vim">
+<meta property="og:url" content="http://phding.com/setup-youcompleteme-for-c-plus-plus-programming/">
+<meta property="og:site_name" content="PHDING">
+
+
+
+
+
+<link rel="canonical" href="http://phding.com/setup-youcompleteme-for-c-plus-plus-programming/">
+<link href="http://phding.com/feed.xml" type="application/atom+xml" rel="alternate" title="PHDING Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://phding.com/assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+	<script src="http://phding.com/assets/js/vendor/html5shiv.min.js"></script>
+	<script src="http://phding.com/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="http://phding.com/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+<link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://phding.com/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://phding.com/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://phding.com/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://phding.com/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://phding.com/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://phding.com/images/apple-touch-icon-144x144-precomposed.png">
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+
+<body class="post">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="http://phding.com/">PHDING</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation" id="site-nav" class="nav">
+		    <ul>
+		        
+				    
+				    <li><a href="http://phding.com/posts" >All Posts</a></li>
+				
+				    
+				    <li><a href="http://phding.com/academia" >Academia</a></li>
+				
+				    
+				    <li><a href="http://phding.com/geeking" >Geeking</a></li>
+				
+				    
+				    <li><a href="http://phding.com/misc" >Misc</a></li>
+				
+				    
+				    <li><a href="http://phding.com/cn" >中文</a></li>
+				
+				    
+				    <li><a href="http://phding.com/de" >Deutsch</a></li>
+				
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+<div id="main" role="main">
+  <article class="post">
+    <div class="headline-wrap">
+      
+        <h1><a href="http://phding.com/setup-youcompleteme-for-c-plus-plus-programming/" rel="bookmark" title="(Updated 17/01/04) Setup YouCompleteMe For C++ Programming">(Updated 17/01/04) Setup YouCompleteMe For C++ Programming</a></h1>
+      
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap">
+      <p>This is a updated version of the original post after I fixed my YouCompleteMe (or YCM) installation broke-down on Jan 3rd, 2017. Better configuration solution for <code class="language-plaintext highlighter-rouge">bjam</code> build system is appended at the end.</p>
+
+<h3 id="preparation">Preparation</h3>
+
+<p>To start with, visit the <a href="https://github.com/Valloric/YouCompleteMe">Github page</a> and read through the section with the title “Mac OS X super-quick installation”. Particularly pay attention to the part that has something to do with C Family language, as I quote:</p>
+
+<blockquote>
+  <ul>
+    <li>If you want C-family completion, you MUST have the latest Xcode installed along with the latest Command Line Tools (they are installed when you start Xcode for the first time).</li>
+    <li>Install CMake. Preferably with <a href="http://mxcl.github.com/homebrew/">Homebrew</a>, but here’s the <a href="http://www.cmake.org/download/">stand-alone CMake installer</a>.</li>
+  </ul>
+</blockquote>
+
+<p>Apart from these, another thing to check for is your Vim version. First, YouCompleteMe will only work with Vim version higher than 7.3.584. To check for your version, just run <code class="language-plaintext highlighter-rouge">vi --version | head -1</code> or start Vim without specifying a file to open. Also, your Vim should have python2.x support. To check whether you have python2.x support, run <code class="language-plaintext highlighter-rouge">vi --version | grep '+python'</code>. If the output is not null, you’re good to go. The YouCompleteMe document requires you to use MacVim, but from my experience that does not matter much as long as the previous two requirements are met.</p>
+
+<h3 id="installation">Installation</h3>
+
+<p>Having finished all these checks, it’s time to start install YCM. Basically YCM has two parts: the Vim plugin that interacts with Vim, and the clang backend that generates completion by compiling the source file. Hence, the installation will also proceed in two parts.</p>
+
+<h4 id="vim-plugin">Vim Plugin</h4>
+
+<p>Install  with <a href="https://github.com/VundleVim/Vundle.vim">Vundle</a>. If you don’t use vundle, it’s worth to take some time to get familiar with it.</p>
+
+<h4 id="clang-backend">Clang Backend</h4>
+
+<p>I just charged ahead and used the simple installation script, which is just typing the following command to compile YCM:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd ~/.vim/bundle/YouCompleteMe
+./install.sh --clang-completer
+</code></pre></div></div>
+
+<p>The maintainer confused me somewhat by saying:</p>
+
+<blockquote>
+  <p>Please refer to the full Installation Guide below; the following commands are provided on a best-effort basis and may not work for you.</p>
+</blockquote>
+
+<p>which seem to have meant that everyone should go through the procedure in the full Installation Guide, and yet he kept the quick installation guide for each OS. Persoanlly I tried both full and quick installation on my Mac OS X, and I don’t see any difference. But YMMV.</p>
+
+<h3 id="configuration">Configuration</h3>
+
+<h4 id="ycm_extra_confpy-file"><code class="language-plaintext highlighter-rouge">.ycm_extra_conf.py</code> file</h4>
+
+<p>OK. Now you have installed YCM, but this is not the end of the story. Because specially for YCM to work with C++ program, you’ll have to write a <code class="language-plaintext highlighter-rouge">.ycm_extra_conf.py</code> file in your project directory, to provide your plugin with all the headers and flags needed to compile the source. Fortunately you don’t really have to write it, at least most of the time – you can have it generated automatically, using <a href="https://github.com/rdnetto/YCM-Generator">YCM-Generator</a>. Don’t attempt to use Vundle to install it, just <code class="language-plaintext highlighter-rouge">git clone</code> to somewhere and you are done.</p>
+
+<p>What this generator does is reading the makefile in your project directory and translate the setup of your build into the setup of your auto-completion plugin. But still, there is a template file which you need to fill up, which points to your C++ standard library and so on. Now here is the problem: how would your plugin know where is your C++ standard library? Well the fact is your plugin won’t automatically know, and your YCM-Generator won’t either – you have to tell them.</p>
+
+<p>So you’ll have to know where does the C++ library locate in your machine. Type <code class="language-plaintext highlighter-rouge">echo | clang -v -E -x c++ -</code> into your terminal, you should be able to get something like this:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Apple LLVM version 8.0.0 (clang-800.0.42.1)
+Target: x86_64-apple-darwin16.3.0
+
+...
+
+#include "..." search starts here:
+#include &lt;...&gt; search starts here:
+ /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../include/c++/v1
+ /usr/local/include
+ /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/../lib/clang/8.0.0/include
+ /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include
+ /usr/include
+ /System/Library/Frameworks (framework directory)
+ /Library/Frameworks (framework directory)
+End of search list.
+</code></pre></div></div>
+
+<p>The above directories listed are the places where your C++ compiler would search for when they build your C++ programs, so naturally, you should tell your auto-completion program to search the same place as well. To do this, go to your YCM-Generator directory and find <code class="language-plaintext highlighter-rouge">template.py</code>. As the name suggests, this is the “template” your generator use to generate your auto-completion comfiguration file. Find the <code class="language-plaintext highlighter-rouge">flags</code> variable (which is a python list) at the beginning of the source file, add your include directories like this:</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">flags</span> <span class="o">=</span> <span class="p">[</span>
+	<span class="sh">'</span><span class="s">-isystem</span><span class="sh">'</span><span class="p">,</span>
+	<span class="sh">'</span><span class="s">/path/to/your/first/system/include/directory</span><span class="sh">'</span><span class="p">,</span>
+	<span class="sh">'</span><span class="s">-isystem</span><span class="sh">'</span><span class="p">,</span>
+	<span class="sh">'</span><span class="s">/path/to/your/second/system/include/directory</span><span class="sh">'</span><span class="p">,</span>
+	<span class="bp">...</span>
+	<span class="sh">'</span><span class="s">-I</span><span class="sh">'</span><span class="p">,</span>
+	<span class="sh">'</span><span class="s">/path/to/your/first/local/include/directory</span><span class="sh">'</span><span class="p">,</span>
+	<span class="bp">...</span>
+<span class="p">]</span></code></pre></figure>
+
+<p>In short, the <code class="language-plaintext highlighter-rouge">-isystem</code> tag precedes all the system library paths, while <code class="language-plaintext highlighter-rouge">-I</code> precedes all the local include directories. Keep in mind that this is a template so you shouldn’t add any project-specific paths in there. Personally, I only add <code class="language-plaintext highlighter-rouge">.</code> to the local include directories in <code class="language-plaintext highlighter-rouge">template.py</code>.</p>
+
+<p>When you generate configuration files for your project with YCM-Generator, you should run:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/path/to/YCM-Generator/config_gen.py /path/to/project
+</code></pre></div></div>
+
+<p>That’s not too hard, isn’t it? Regretfully, when I write this post, YCMGenerator only supports four build systems: <code class="language-plaintext highlighter-rouge">make</code> <code class="language-plaintext highlighter-rouge">cmake</code> <code class="language-plaintext highlighter-rouge">qmake</code> and <code class="language-plaintext highlighter-rouge">autotools</code>. Now what should we do if we are using building systems other than these four? I used to use some guesswork to fill in the compilation flags, and as you can imagine things do not work as consistently as I hoped. And after two years I finally find a workaround.</p>
+
+<h4 id="optional-use-bear-to-generate-flags">(Optional) Use <code class="language-plaintext highlighter-rouge">Bear</code> To Generate Flags</h4>
+
+<p><strong>Disclaimer</strong>: The <code class="language-plaintext highlighter-rouge">.ycm_extra_conf.py</code> config file I provided only works for <code class="language-plaintext highlighter-rouge">bjam</code> build system. If you need to make it work on other building systems, you may need to create your own config.</p>
+
+<p><strong>Credit</strong>: I found this solution <a href="https://github.com/gavinbeatty/gavinbeatty/blob/master/help/vim-ycm.mkd">here</a> by Gavin Beatty. I also forked his YCM config file and made some small changes. Thanks.</p>
+
+<p>From my understanding, <a href="https://github.com/rizsotto/Bear">Bear</a> is a program that intercepts all the compilation commands incurred by a system build and formatting them into a <code class="language-plaintext highlighter-rouge">compile_commands.json</code> file, “for clang tooling”. I don’t really know why one would want to do that, but all we want is generating clang compilation flags for YCM, and it seems to do its job.</p>
+
+<p>However, for OS X version later than 10.11 (El Capitan), <code class="language-plaintext highlighter-rouge">Bear</code> may not be as easy to setup as it is for others because it doesn’t like something called <a href="https://en.wikipedia.org/wiki/System_Integrity_Protection">SIP</a> in OS X. To make it work, you have to turn SIP off first. You can find a lot of tutorials that teach you how to do that. If you don’t want to turn SIP off, you may want to try <a href="https://github.com/rizsotto/scan-build">scan-build</a>, which contains some workaround specifically designed for that. But I’m only going to introduce <code class="language-plaintext highlighter-rouge">Bear</code>.</p>
+
+<p>Setting up <code class="language-plaintext highlighter-rouge">Bear</code> on OS X itself is pretty straight-forward – there is a brew format so you can install it simply by calling:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew install bear
+</code></pre></div></div>
+
+<p>What you’ll do next is generating the json file. Here is how you do it:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bear [build command]
+</code></pre></div></div>
+
+<p>For example, my command is:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bear ./bjam --with-boost=~/Workspace/moses/opt --with-cmph=~/Workspace/moses/opt --with-mm --with-probing-pt -j4 -a
+</code></pre></div></div>
+
+<p>You may see a warning about <code class="language-plaintext highlighter-rouge">.dylb</code> and code signing. Just ignore it.</p>
+
+<p>The last step is to copy <a href="https://github.com/shuoyangd/trilobites/blob/master/.ycm_extra_conf.py">this</a> YCM config file to your project root directory. It is designed to first go through <code class="language-plaintext highlighter-rouge">compile_commands.json</code> and collect flags for the source file you opened. If no flags are found in the json file, the script falls back to scanning your project folders and some guesswork. To make it cleverer, you can (and you should!) make changes in <code class="language-plaintext highlighter-rouge">CustomFlags</code> function to add some paths that you would like to include.</p>
+
+<p>One last note: <code class="language-plaintext highlighter-rouge">Bear</code> does not assume build system, and it should also be pretty easy to change <code class="language-plaintext highlighter-rouge">.ycm_extra_conf.py</code> to accommodate your build system. So this solution should work for all the C++ build systems. Of course, I still recommend using <code class="language-plaintext highlighter-rouge">YCM-Generator</code> if possible such that you don’t have to tamper with your OS X security system.</p>
+
+<h4 id="optional-vimrc-setup">(Optional) <code class="language-plaintext highlighter-rouge">.vimrc</code> Setup</h4>
+
+<p>YCM provides lots of hidden features in its configurations, which is simply too long for me to go through. So far I just picked some handy ones to add to my <code class="language-plaintext highlighter-rouge">.vimrc</code> file. If you know any other settings that are not included here, please let me know.</p>
+
+<figure class="highlight"><pre><code class="language-vim" data-lang="vim"><span class="c">"" turn on completion in comments</span>
+<span class="k">let</span> <span class="nv">g:ycm_complete_in_comments</span><span class="p">=</span><span class="m">1</span>
+<span class="c">"" load ycm conf by default</span>
+<span class="k">let</span> <span class="nv">g:ycm_confirm_extra_conf</span><span class="p">=</span><span class="m">0</span>
+<span class="c">"" turn on tag completion</span>
+<span class="k">let</span> <span class="nv">g:ycm_collect_identifiers_from_tags_files</span><span class="p">=</span><span class="m">1</span>
+<span class="c">"" only show completion as a list instead of a sub-window</span>
+<span class="k">set</span> <span class="nb">completeopt</span><span class="p">-=</span>preview
+<span class="c">"" start completion from the first character</span>
+<span class="k">let</span> <span class="nv">g:ycm_min_num_of_chars_for_completion</span><span class="p">=</span><span class="m">1</span>
+<span class="c">"" don't cache completion items</span>
+<span class="k">let</span> <span class="nv">g:ycm_cache_omnifunc</span><span class="p">=</span><span class="m">0</span>
+<span class="c">"" complete syntax keywords</span>
+<span class="k">let</span> <span class="nv">g:ycm_seed_identifiers_with_syntax</span><span class="p">=</span><span class="m">1</span></code></pre></figure>
+
+<p>This concludes our configuration for YCM. Open a C++ project and start Viming.</p>
+
+
+      <hr />
+      <footer role="contentinfo">
+        <p class="byline"><strong>(Updated 17/01/04) Setup YouCompleteMe For C++ Programming</strong> was published on <time datetime="2017-01-03T23:33:32-05:00">January 03, 2017</time>.</p>
+      </footer>
+    </div><!-- /.article-wrap -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="http://phding.com/posts/">View all posts</a>)</small></h4>
+    <ul>
+    
+      <li><a href="http://phding.com/homesick/" title="思乡">思乡</a></li>
+    
+      <li><a href="http://phding.com/du-bist-alles/" title="Du bist alles">Du bist alles</a></li>
+    
+      <li><a href="http://phding.com/fate-and-history/" title="谈谈个人命运与历史行程">谈谈个人命运与历史行程</a></li>
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  <footer>
+    
+
+<span>&copy; 2026 sd. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://phding.com/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://phding.com/assets/js/scripts.min.js"></script>
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl = 
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', '{"provider" => "google", "google" => {"tracking_id" => "UA-55222505-2"}}']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+	        
+
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Setup For C++ Programming Under OS X Command Line &#8211; PHDING</title>
+<meta name="description" content="Be happy and convert from IDE">
+<meta name="keywords" content="Geeking, OS X, C++">
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="Setup For C++ Programming Under OS X Command Line">
+<meta name="twitter:description" content="Be happy and convert from IDE">
+
+
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://phding.com/images/default-thumb.png">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Setup For C++ Programming Under OS X Command Line">
+<meta property="og:description" content="Be happy and convert from IDE">
+<meta property="og:url" content="http://phding.com/setup-for-c-plus-plus-programming-under-os-x-command-line/">
+<meta property="og:site_name" content="PHDING">
+
+
+
+
+
+<link rel="canonical" href="http://phding.com/setup-for-c-plus-plus-programming-under-os-x-command-line/">
+<link href="http://phding.com/feed.xml" type="application/atom+xml" rel="alternate" title="PHDING Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="http://phding.com/assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+	<script src="http://phding.com/assets/js/vendor/html5shiv.min.js"></script>
+	<script src="http://phding.com/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="http://phding.com/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+<link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="http://phding.com/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="http://phding.com/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="http://phding.com/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="http://phding.com/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="http://phding.com/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="http://phding.com/images/apple-touch-icon-144x144-precomposed.png">
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+</head>
+
+<body class="post">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="http://phding.com/">PHDING</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav role="navigation" id="site-nav" class="nav">
+		    <ul>
+		        
+				    
+				    <li><a href="http://phding.com/posts" >All Posts</a></li>
+				
+				    
+				    <li><a href="http://phding.com/academia" >Academia</a></li>
+				
+				    
+				    <li><a href="http://phding.com/geeking" >Geeking</a></li>
+				
+				    
+				    <li><a href="http://phding.com/misc" >Misc</a></li>
+				
+				    
+				    <li><a href="http://phding.com/cn" >中文</a></li>
+				
+				    
+				    <li><a href="http://phding.com/de" >Deutsch</a></li>
+				
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+<div id="main" role="main">
+  <article class="post">
+    <div class="headline-wrap">
+      
+        <h1><a href="http://phding.com/setup-for-c-plus-plus-programming-under-os-x-command-line/" rel="bookmark" title="Setup For C++ Programming Under OS X Command Line">Setup For C++ Programming Under OS X Command Line</a></h1>
+      
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap">
+      <p>Recently I’m converting from a clan called Java back to something else called C++, in which I believed so profoundly three years ago.</p>
+
+<p>The past three years witnessed more changes apart from the my religion for programming languages, but also my whole programming workflow as well.<br />
+I’m now a OS X user and a command line enthusiast, while three years ago I was still struggling between Windows &amp; Ubuntu and was an IDE advocate (by the way I still find Visual Studio 2010 the best C++ IDE I’ve ever used).</p>
+
+<p>So there is gonna be some change. Let’s get going.</p>
+
+<h3 id="environment">Environment</h3>
+<p>The environment comes with the package <em>Xcode Command Line Tools</em>. It has the compiler, library, debugger… everything <em>essential</em> a system should provide to program C++. That being said, <strong>I personally recommend installing the full Xcode package</strong>, since at times you’ll need more than that. Yes it takes around 7 gigabytes of disk, but to make your life easier, it worths that space.</p>
+
+<p>As you may expect, the toolkit is contained in the full Xcode package. But for Xcode 4.3 and later, it is no longer automatically installed, so don’t assume you have installed it if you saw Xcode on your machine.</p>
+
+<p>So how do you know you have already installed Xcode command line tools? As introduced in <a href="http://railsapps.github.io/xcode-command-line-tools.html">this</a> very nice tutorial and my own experience, there are three options:</p>
+
+<p>Check if you have installed Xcode full package. Just type:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xcode-select -p
+</code></pre></div></div>
+<p>to your terminal. If you see the following line:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/Applications/Xcode.app/Contents/Developer
+</code></pre></div></div>
+<p>It means you have installed the Xcode full package, and you are good to go. If you instead see this line:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/Library/Developer/CommandLineTools
+</code></pre></div></div>
+<p>It means you have installed the Xcode commnad line tool, you are also good to go.</p>
+
+<p>Or you can type <code class="language-plaintext highlighter-rouge">gcc</code> to your terminal, you might see the prompt that say something like “gcc requires you to install command line developer tools” and ask if you want to install. Just say yes, and after the installation process you’ll have the developer tools package in your machine.</p>
+
+<p>You can also open the Xcode application and go to the preferences window. Proceed to the download section and if you see a install button next to the command line tools, it means you haven’t install the command line tools or at least your tool is not up to date. Press the button to install/update the tool and you are done.</p>
+
+<h3 id="editor">Editor</h3>
+<p>OK here is the embarrassing moment: I use Vim myself, and so for those Emacs users, I won’t teach you how to set up editor unless you convert to Vim :)</p>
+
+<p>For Vim users, I assume you have the basic plugins such as <code class="language-plaintext highlighter-rouge">NerdTree</code>, <code class="language-plaintext highlighter-rouge">Vundle</code> and <code class="language-plaintext highlighter-rouge">Syntastic</code> (if you don’t know what I’m talking about I suggest you to look at <a href="http://haridas.in/vim-as-your-ide.html">this</a> and do a little personalization with your vim first). What I would like to recommend here for C++ programming are these two plugins: <a href="https://github.com/Valloric/YouCompleteMe">YouCompleteMe</a> and <a href="http://ctags.sourceforge.net/">ctags</a>.</p>
+
+<p>Under Mac OS X, you may want to use <code class="language-plaintext highlighter-rouge">MacVim</code> instead of <code class="language-plaintext highlighter-rouge">Vim</code>, since it often comes with most complete support customized for Mac OS X (such as python). You can use it like gVim in a graphical interface, or invoke <code class="language-plaintext highlighter-rouge">mvim -v</code> to use it within the terminal. You can even mimic Vim by setting an alias <code class="language-plaintext highlighter-rouge">alias vim='mvim -v'</code>.</p>
+
+<h4 id="youcompleteme-ycm">YouCompleteMe (YCM)</h4>
+<p>Trust me – I’ve tried many, many different auto-completion plugins in Vim, since the time when I was still sticked to Java. The story is, most of the plugins <em>claim</em> they can do something amazing, but they either just suck or take forever to get the configuration correct (at least for me). YouCompleteMe is the first and the only auto-completion plugin that I managed to set up correctly on my Vim and that makes me feel it gets its work done.</p>
+
+<p>The setup for YouCompleteMe is somewhat tricky, and at times its documentation is not perfect. To avoid diverging too far in this post, I set aside an individual post for the procedure. If you are interested, read it <a href="http://phding.com/setup-youcompleteme-for-c-plus-plus-programming/">here</a>.</p>
+
+<h4 id="ctags">ctags</h4>
+<p>ctags is a must-have if you often deal with large projects. Strictly speaking it is not a Vim plugin, in fact you can use it with Emacs or gedit. But since Vim is the best editor in the world, you should use it with Vim ;)</p>
+
+<p>For the definition of ctags, let me quote the definition from the <a href="http://ctags.sourceforge.net/">official website</a>:</p>
+
+<blockquote>
+  <p>Ctags generates an index (or tag) file of language objects found in source files that allows these items to be quickly and easily located by a text editor or other utility. A tag signifies a language object for which an index entry is available (or, alternatively, the index entry created for that object).</p>
+</blockquote>
+
+<p>These tags will be generated into a file called <code class="language-plaintext highlighter-rouge">tags</code> (by default). When you search for the definition of a variable / the invocations of a function, Vim will read this <code class="language-plaintext highlighter-rouge">tags</code> file and point you to the place(s) you should look at. That’s why it is especially useful for large projects – you’ll need to figure out what variables / functions actually do from time to time.</p>
+
+<p>To start using ctags, download the source package from the <a href="http://ctags.sourceforge.net/">official website</a>. <code class="language-plaintext highlighter-rouge">cd</code> to the directory of your source package and run the following script:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./configure
+make
+make install
+</code></pre></div></div>
+
+<p>If you are working on a server, you may want to substitute the first line with:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./configure --prefix=/path/to/a/local/directory
+</code></pre></div></div>
+
+<p>so that you don’t have to fiddle with the <code class="language-plaintext highlighter-rouge">sudo</code> previlege.</p>
+
+<p>After installation, check your version with <code class="language-plaintext highlighter-rouge">ctags --version</code>. If you see something start with <code class="language-plaintext highlighter-rouge">Exuberant Ctags</code>, you are fine. If not, you probably have some older version ctags and you are still running that older version. So you may probably need to remove the older version before install again, or overwrite your <code class="language-plaintext highlighter-rouge">PATH</code> variable to overwrite the path to your older version.</p>
+
+<p>To generate tags file, most often you’ll <code class="language-plaintext highlighter-rouge">cd</code> to your codebase and run:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ctags -R .
+</code></pre></div></div>
+
+<p>The <code class="language-plaintext highlighter-rouge">-R</code> option tells ctags that you want to search recursively into the sub-directories of your codebase.</p>
+
+<p>Now you have the tag file for your codebase, you can start to code in Vim. To search for a tag, move your cursor to a function / a class / a variable name and type <code class="language-plaintext highlighter-rouge">ctrl + ]</code>, and you’ll be tranferred to the first tag in the list. If it is not desired, type <code class="language-plaintext highlighter-rouge">g + ctrl + ]</code> instead to see the whole tag list. To return from the transferred postion, type <code class="language-plaintext highlighter-rouge">ctrl + t</code>.</p>
+
+<h3 id="compiler">Compiler</h3>
+<p>If you set up the environment (Xcode Command Line Tools) correctly, you should have both <code class="language-plaintext highlighter-rouge">clang</code> and <code class="language-plaintext highlighter-rouge">gcc</code>. I personally slightly prefer <code class="language-plaintext highlighter-rouge">gcc</code> for more complete language support, more optimization options and better compatibility for some projects. But I’ve also heard that <code class="language-plaintext highlighter-rouge">clang</code> might generate more detailed error messages. It’s up to you which to choose.</p>
+
+<p>Note that if you use YouCompleteMe, you must have clang ready on your machine, since it has a clang-based engine.</p>
+
+<h3 id="debugger">Debugger</h3>
+<p>Save yourself the endless trouble and use <code class="language-plaintext highlighter-rouge">lldb</code> instead of <code class="language-plaintext highlighter-rouge">gdb</code>. <code class="language-plaintext highlighter-rouge">lldb</code> defaults to the OS X environment and is very similar to <code class="language-plaintext highlighter-rouge">gdb</code> except some differences in commands. In case you are wondering, <a href="http://lldb.llvm.org/lldb-gdb.html">here</a> is a very useful chart to show these differences. You can also use this chart as a cheat sheet for common operations.</p>
+
+<p>To start debugging an executable, type <code class="language-plaintext highlighter-rouge">lldb /path/to/executable</code> to your terminal to start the debugger. Setup the breakpoints and other stuff and type <code class="language-plaintext highlighter-rouge">run</code> to actually start the program. You can add any argument you want to pass to the program after the <code class="language-plaintext highlighter-rouge">run</code> command.</p>
+
+<p>Two more tips with the debugger in case you are new to command line workflow: remember to compile your program with -g option to enable variable inspection; the command to exit <code class="language-plaintext highlighter-rouge">lldb</code> or <code class="language-plaintext highlighter-rouge">gdb</code> is <code class="language-plaintext highlighter-rouge">quit</code> ;)</p>
+
+<p><br /> <br /></p>
+
+<p>I understand that this tutorial is error-prone and by no means complete. If you have any suggestions on how to make this tutorial more practical, leave a note in the comments and we can discuss!</p>
+
+      <hr />
+      <footer role="contentinfo">
+        <p class="byline"><strong>Setup For C++ Programming Under OS X Command Line</strong> was published on <time datetime="2015-09-06T21:23:37-04:00">September 06, 2015</time>.</p>
+      </footer>
+    </div><!-- /.article-wrap -->
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="http://phding.com/posts/">View all posts</a>)</small></h4>
+    <ul>
+    
+      <li><a href="http://phding.com/homesick/" title="思乡">思乡</a></li>
+    
+      <li><a href="http://phding.com/du-bist-alles/" title="Du bist alles">Du bist alles</a></li>
+    
+      <li><a href="http://phding.com/fate-and-history/" title="谈谈个人命运与历史行程">谈谈个人命运与历史行程</a></li>
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  <footer>
+    
+
+<span>&copy; 2026 sd. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="http://mademistakes.com/minimal-mistakes/" rel="nofollow">Minimal Mistakes</a> theme.</span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="http://phding.com/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="http://phding.com/assets/js/scripts.min.js"></script>
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl = 
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', '{"provider" => "google", "google" => {"tracking_id" => "UA-55222505-2"}}']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+	        
+
+</body>
+</html>
